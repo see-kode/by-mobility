@@ -633,7 +633,7 @@ h4 {
   left: 0;
   right: 0;
   z-index: var(--z-sticky);
-  padding: var(--space-6) 0;
+  padding: var(--space-4) 0;
   background-color: transparent;
   transition:
     padding var(--duration-normal) var(--ease-out),
@@ -642,7 +642,7 @@ h4 {
 }
 
 .navbar.scrolled {
-  background-color: rgba(253, 252, 250, 0.98);
+  background: rgba(253, 252, 250, 0.98);
   backdrop-filter: blur(12px);
   padding: var(--space-3) 0;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
@@ -653,6 +653,30 @@ h4 {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__logo img {
+  height: 45px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  transition:
+    height var(--duration-normal) var(--ease-out),
+    filter var(--duration-normal) var(--ease-out);
+  /* Halo diffus #d5d1c3 subtilement renforcé et orienté vers la gauche */
+  filter: drop-shadow(-2px 0 8px #d5d1c3) drop-shadow(0 0 10px #d5d1c3);
+}
+
+.navbar.scrolled .navbar__logo img {
+  height: 36px;
+  filter: none;
 }
 
 .navbar__logo .logo-text {
@@ -2581,6 +2605,11 @@ h4 {
   .navbar__logo .logo-text {
     font-size: var(--fs-xl);
     letter-spacing: 0.04em;
+  }
+
+  .navbar__logo img {
+    height: 32px;
+    max-width: 145px;
   }
 
   /* Button adjustments */
